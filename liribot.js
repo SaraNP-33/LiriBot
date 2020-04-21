@@ -19,8 +19,8 @@ var spotify=require("node-spotify-api");
 //variable that will indicate where to start in the command line in node- slice will make sure 
 //that the node path does not show
 
-var node= process.argv[2].slice();
-
+var cmmnode= process.argv[2];
+var search="";
 //variables to use the keys in this file - importing the keys into this file
 
 var spotify = new spotify(keys.spotify);
@@ -45,8 +45,16 @@ switch(expression) {
     default:
       console.log("Try again.")
 }
-
+//function findMovie- in  this function use axios to call in the specific movie the user is looking for
 function findMovie(){
+    //create a loop to allow the user to search for movies with multiple words
+    for(var i=3;i<cmmnode.length;i++){
+        if(i>3 && i<cmmnode.length){
+            search= search + "+" + cmmnode[i];
+        }else {
+            search+= cmmnode[i];
+        }
+    }
 var query= "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=" + omdb;
 console.log(query);
 
@@ -75,7 +83,7 @@ axios.get(query).then(function(res){
 })
 }
 
-//function findMovie- in  this function use axios to call in the specific movie the user is looking for
+
 
 //function findBands - in this function use axios to call in the bands who are in town.
 //need to use moment to display the date
