@@ -2,7 +2,7 @@
   "name": "LiriBot",
   "version": "1.0.0",
   "description": "Liri Bot",
-  "main": "keys.js",
+  "main": "liribot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/SaraNP-33/LiriBot/issues"
   },
-  "homepage": "https://github.com/SaraNP-33/LiriBot#readme"
+  "homepage": "https://github.com/SaraNP-33/LiriBot#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }
