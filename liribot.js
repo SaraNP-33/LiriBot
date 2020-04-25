@@ -98,16 +98,17 @@ axios.get(query).then(function(res){
 //function findBands - in this function use axios to call in the bands who are in town.
 //need to use moment to display the date
 function findBands(){
-    var query= "https://rest.bandsintown.com/artists"+ search+ "/events?app_id=codingbootcamp"
+    var query= "https://rest.bandsintown.com/artists/"+ search+ "/events?app_id=codingbootcamp"
+    console.log(query);
 
     axios.get(query).then(function(res){
+      // console.log(JSON.stringify(res));
        console.log("*************** Bands in Town **************************");
        console.log("Artist:", search);
        console.log("Venue:",res.data[0].venue.name);
        console.log("Location:", res.data[0].venue.city);
        console.log("Date:",moment(res.data[0].datatime).format("MM-DD-YYYY h:mm a"));
-      })
-      .catch(function(err){
+      }).catch(function(err){
         if(err) throw err
       });
     
@@ -116,13 +117,15 @@ function findBands(){
 function findSong(){
   spotify.search({type:"track", query:search}, function(err,data){
     if(err){
-      return console.log("There was Error:", err)
+      return console.log("There was an Error:", err)
     };
+    // console.log(JSON.stringify(data));
+    
     console.log("**********************Your Song*******************")
-    console.log("Artist(s) Name:", data.tracks.items[0].album.artist[0].name);
+    console.log("Artist(s) Name:", data.tracks.items[0].artists[0].name);
     console.log("Song Name:", data.tracks.items[0].name);
     console.log("Song Preview Link", data.tracks.items[0].href);
-    console.log("Album", data.tracks.item[0].album.name);
+    console.log("Album", data.tracks.items[0].album.name);
     console.log("*****************************************************")
   });
 };
