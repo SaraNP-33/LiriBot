@@ -9,16 +9,16 @@ exports.spotify = {
 
 
 
-console.log('this is loaded');
+// console.log('this is loaded');
 
-exports.omdb = {
-  id: process.env.OMDB_ID,
+// exports.omdb = {
+//   id: process.env.OMDB_ID,
   
-};
+// };
 
-console.log('this is loaded');
+// console.log('this is loaded');
 
-exports.bandsintown = {
-  id: process.env.BandsinTown_ID,
+// exports.bandsintown = {
+//   id: process.env.BandsinTown_ID,
   
-};
+// };
