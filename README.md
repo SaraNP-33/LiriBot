@@ -26,6 +26,6 @@
 
 ![whatItSays.png](./images/whatItSays.png)
 
-![whatItSays-result.png](./images/whatItSays-result.png)
+![whatItsays-result.png](./images/whatItsays-result.png)
 
 
